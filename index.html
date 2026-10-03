@@ -116,6 +116,41 @@
     max-width: 760px;
   }
 
+  .authors {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px 28px;
+    margin: 0 auto 10px;
+    max-width: 760px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .authors sup, .affiliations sup {
+    font-size: 0.65em;
+    margin-left: 1px;
+    color: var(--ink-soft);
+  }
+
+  .affiliations {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px 24px;
+    margin: 0 auto 30px;
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+
+  .authors a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .authors a:hover { color: var(--accent); border-color: var(--accent); }
+
   .cta-row {
     display: flex;
     justify-content: center;
@@ -150,6 +185,13 @@
   }
 
   .pill.solid:hover { background: var(--accent); border-color: var(--accent); }
+
+  .pill.disabled {
+    color: var(--ink-faint);
+    cursor: default;
+  }
+
+  .pill.disabled:hover { transform: none; box-shadow: none; }
 
   /* ---------- Teaser video ---------- */
   .teaser-wrap {
@@ -601,13 +643,22 @@
 </nav>
 
 <header class="hero">
-  <div class="kicker">ICRA 2027 Submission</div>
   <h1 class="title">Force-Modulated Dexterity</h1>
   <p class="tagline">Unified Compliance for Contact-Rich Manipulation</p>
+  <div class="authors">
+    <span><a href="https://yingyuan0414.github.io/">Ying Yuan</a><sup>1,2</sup></span>
+    <span><a href="https://davheld.github.io/">David Held</a><sup>2</sup></span>
+    <span><a href="https://people.eecs.berkeley.edu/~malik/">Jitendra Malik</a><sup>1</sup></span>
+    <span><a href="https://haozhi.io/">Haozhi Qi</a><sup>1</sup></span>
+  </div>
+  <div class="affiliations">
+    <span><sup>1</sup>Amazon FAR</span>
+    <span><sup>2</sup>Carnegie Mellon University</span>
+  </div>
   <div class="cta-row">
-    <!-- <a class="pill solid" href="_ICRA_2027_.pdf">Paper (PDF)</a> -->
-    <a class="pill" href="#teleop">Teleop Demos</a>
-    <a class="pill" href="#bc">Policy Rollouts</a>
+    <a class="pill solid" href="#">Paper</a>
+    <span class="pill disabled">Code (Coming Soon)</span>
+    <a class="pill" href="#">Twitter</a>
   </div>
 </header>
 
@@ -923,7 +974,6 @@
 
 <footer>
   <p>Force-Modulated Dexterity &middot; Unified Compliance for Contact-Rich Manipulation</p>
-  <p>Submitted to ICRA 2027 &middot; Anonymous Authors</p>
 </footer>
 
 <script>
